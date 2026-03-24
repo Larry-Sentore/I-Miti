@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-Miti: Pharmacy Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <header>
+        <h1>Pharmacy Login</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="pharegister.html">Register Pharmacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="login">
+        <h2>Login to Your Pharmacy Account</h2>
+        <form action="/login_pharmacy" method="post">
+            <label for="certificate">License Certificate Number:</label>
+            <input type="text" id="certificate" name="certificate" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <script src="/scripts/login.js" defer></script>
+
+    <footer>
+        <p>&copy; 2024 I-Miti. All rights reserved.</p>
+    </footer>

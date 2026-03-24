@@ -1,0 +1,181 @@
+/* Pharmacy page styles */
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header nav ul li {
+    display: flex;
+}
+
+header nav ul li a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: #f8f9fa;
+}
+
+#logout-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#logout-btn:hover {
+    background: #c82333;
+}
+
+
+#stock-update {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#stock-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+#stock-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#stock-form input, #stock-form button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#stock-form input {
+    min-width: 150px;
+}
+
+#stock-form button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+#stock-form button:hover {
+    background: #0056b3;
+}
+
+#view-stock {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#view-stock:hover {
+    background: #218838;
+}
+
+#stock-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#stock-table th, #stock-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#stock-table th {
+    background: #f8f9fa;
+    font-weight: bold;
+}
+
+#stock-table tr:hover {
+    background: #f8f9fa;
+}
+
+#stock-table input[type="number"] {
+    width: 80px;
+    padding: 4px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+#stock-table select {
+    padding: 4px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.update-btn, .cancel-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.update-btn {
+    background: #007bff;
+    color: white;
+    display: none;
+}
+
+.update-btn:hover {
+    background: #0056b3;
+}
+
+.cancel-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: #545b62;
+}
+
+@media (max-width: 768px) {
+    #stock-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #stock-table table {
+        font-size: 14px;
+    }
+
+    #stock-table th, #stock-table td {
+        padding: 8px;
+    }
+}

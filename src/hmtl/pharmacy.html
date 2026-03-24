@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-Miti: Pharmacy Stock Update</title>
+    <link rel="stylesheet" href="/css/pharmacy.css">
+</head>
+<body>
+    <header>
+        <h1>Pharmacy Stock Update</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><button id="logout-btn" type="button">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="stock-update">
+        <h2>Update Your Pharmacy Stock</h2>
+        <form id="stock-form" action="/update_stock" method="post">
+            <label for="medicine">Medicine Name:</label>
+            <input type="text" id="medicine" name="medicine" required>
+
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required>
+
+            <label for="price">Price(FBU):</label>
+            <input type="number" id="price" name="price" required>
+
+            <button type="submit">Update Stock</button>
+        </form>
+
+        <button id="view-stock">View Current Stock</button>
+        <div id="stock-table"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 I-Miti. All rights reserved.</p>
+    </footer>
+    <script src="/scripts/pharmacy.js" defer></script>
+</html>

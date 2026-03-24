@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-Miti: Pharmacy Register</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <header>
+        <h1>Pharmacy Registration</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="pharegister.html">Register Pharmacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="register">
+        <h2>Register Your Pharmacy</h2>
+        <form action="/register_pharmacy" method="post">
+            <label for="name">Pharmacy Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="certificate">License Certificate Number:</label>
+            <input type="text" id="certificate" name="certificate" required>
+
+            <label for="latitude">Latitude:</label>
+            <input type="text" id="latitude" name="latitude" required>
+
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="longitude" name="longitude" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 I-Miti. All rights reserved.</p>
+    </footer>
+</body>
+<script src="/scripts/register.js" defer></script>
+</html>

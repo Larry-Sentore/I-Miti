@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-Miti: Medicine Search</title>
+</html>
+
+<body>
+    <header>
+        <h1>Search for Medicines</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#results">Results</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="search">
+        <h2>Enter the name of the medicine you are looking for:</h2>
+        <form action="results.html" method="get">
+            <input type="text" name="medicine" placeholder="Medicine name" required>
+            <input type="text" name="latitude" placeholder="Latitude" required>
+            <input type="text" name="longitude" placeholder="Longitude" required>
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <section id="results"> 
+    </section>
+
+    <footer>
+        <p>&copy; 2024 I-Miti. All rights reserved.</p>
+    </footer>
