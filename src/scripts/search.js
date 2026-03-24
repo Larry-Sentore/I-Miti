@@ -35,14 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
             resultsContainer.innerHTML = '<p>No pharmacies found with the specified medicine.</p>';
             return;
         }
-        results.forEach(pharmacy => {
-            const pharmacyDiv = document.createElement('div');
-            pharmacyDiv.classList.add('pharmacy-result');
-            pharmacyDiv.innerHTML = `
-                <h3>${pharmacy.name}</h3>
-                <p>Address: ${pharmacy.address}</p>
-                <p>Phone: ${pharmacy.number}</p>
-                <p>Distance: ${pharmacy.distance.toFixed(2)} km</p>
-            `;
-            resultsContainer.appendChild(pharmacyDiv);
-        });
+            results.forEach(pharmacy => {
+                const pharmacyDiv = document.createElement('div');
+                pharmacyDiv.classList.add('pharmacy-result');
+                pharmacyDiv.innerHTML = `
+                    <h3>${pharmacy.name}</h3>
+                    <p>Address: ${pharmacy.address}</p>
+                    <p>Phone: ${pharmacy.number}</p>
+                    <p>Distance: ${pharmacy.distance.toFixed(2)} km</p>
+                `;
+                resultsContainer.appendChild(pharmacyDiv);
+            });
+        }
+    });
+

@@ -20,7 +20,7 @@
 
     <section id="search">
         <h2>Enter the name of the medicine you are looking for:</h2>
-        <form action="results.html" method="get">
+        <form id="search-form">
             <input type="text" name="medicine" placeholder="Medicine name" required>
             <input type="text" name="latitude" placeholder="Latitude" required>
             <input type="text" name="longitude" placeholder="Longitude" required>
@@ -28,9 +28,11 @@
         </form>
     </section>
 
-    <section id="results"> 
+    <section id="results">
     </section>
 
     <footer>
         <p>&copy; 2024 I-Miti. All rights reserved.</p>
     </footer>
+
+    <script src="scripts/search.js"></script>
