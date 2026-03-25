@@ -13,7 +13,7 @@ CREATE TABLE Pharmacy (
     number TEXT,
     licensenumber TEXT,
     latitude REAL,
-    longitude REAL
+    longitude REAL,
 );
 
 

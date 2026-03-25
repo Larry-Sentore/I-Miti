@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I-Miti: Pharmacy Register</title>
-    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
     <header>
@@ -20,6 +20,9 @@
 
     <section id="register">
         <h2>Register Your Pharmacy</h2>
+        <div style="background-color: #34495e; padding: 15px; border-radius: 5px; margin-bottom: 20px; border-left: 4px solid #3498db;">
+            <p style="margin: 0; color: #ecf0f1;"><strong>Verification Complete:</strong> You have successfully verified your pharmacy credentials. Please complete your registration below.</p>
+        </div>
         <form action="/register_pharmacy" method="post">
             <label for="name">Pharmacy Name:</label>
             <input type="text" id="name" name="name" required>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I-Miti: Medicine locator app</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
@@ -14,7 +14,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="pharegister.html">Pharmacy Register</a></li>
+                <li><a href="#" id="register-link">Pharmacy Register</a></li>
                 <li><a href="phalogin.html">Pharmacy Login</a></li>
             </ul>
         </nav>
@@ -39,8 +39,25 @@
         <a href="search.html" class="btn">Search for Medicines</a>
     </section>
 
+
+    <!-- Password Verification Modal -->
+    <div id="password-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Pharmacy Registration Verification</h2>
+            <p>To register your pharmacy, you must first verify your credentials. Please enter the verification password provided to you after emailing us at <a href="mailto:l.sentore@alustudent.com">l.sentore@alustudent.com</a> with your pharmacy license and certificate.</p>
+            <input type="password" id="verification-password" placeholder="Enter verification password">
+            <button id="verify-btn">Verify</button>
+            <p id="error-message" style="color: red; display: none;">Incorrect password. Please contact us for verification.</p>
+        </div>
+    </div>
+
     <section id="contact">
         <h2>Contact Us</h2>
         <p>If you have any questions or feedback, please feel free to reach out to us at <a href="mailto:l.sentore@alustudent.com">l.sentore@alustudent.com</a>.</p>
     </section>
+
+    <script src="scripts/script.js" defer></script>
+
+</body>
 </html>

@@ -1,181 +1,371 @@
-/* Pharmacy page styles */
+/* Modern Dark Theme for Pharmacy Dashboard */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+    padding: 2rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    text-align: center;
+    color: #00d4ff;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    font-weight: 700;
+}
 
 header nav ul {
-    list-style: none;
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 header nav ul li {
     display: flex;
+    align-items: center;
 }
 
 header nav ul li a {
-    color: #007bff;
+    color: #b0b0b0;
     text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 header nav ul li a:hover {
-    background-color: #f8f9fa;
+    color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
 }
 
 #logout-btn {
-    background: #dc3545;
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
     color: white;
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
 }
 
 #logout-btn:hover {
-    background: #c82333;
+    background: linear-gradient(135deg, #c82333 0%, #a02622 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
 }
 
-
+/* Main Content */
 #stock-update {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 4rem 2rem;
 }
 
+#stock-update h2 {
+    color: #00d4ff;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Stock Form */
 #stock-form {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin-bottom: 3rem;
     display: flex;
-    gap: 15px;
+    gap: 1.5rem;
     align-items: end;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 #stock-form label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-#stock-form input, #stock-form button {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+    margin-bottom: 0.5rem;
+    color: #c0c0c0;
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 
 #stock-form input {
+    padding: 0.8rem;
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #e0e0e0;
+    font-size: 0.9rem;
     min-width: 150px;
+    transition: all 0.3s ease;
 }
 
-#stock-form button {
-    background: #007bff;
+#stock-form input:focus {
+    outline: none;
+    border-color: #00d4ff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+#stock-form input::placeholder {
+    color: #888;
+}
+
+#stock-form button[type="submit"] {
+    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
     color: white;
     border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
     cursor: pointer;
-    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
 }
 
-#stock-form button:hover {
-    background: #0056b3;
+#stock-form button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+    background: linear-gradient(135deg, #33e0ff 0%, #00b3e6 100%);
 }
 
+/* View Stock Button */
 #view-stock {
-    background: #28a745;
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 1rem 2rem;
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
 }
 
 #view-stock:hover {
-    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    background: linear-gradient(135deg, #34d058 0%, #28a745 100%);
+}
+
+/* Stock Table */
+#stock-table {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
 
 #stock-table table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-#stock-table th, #stock-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+    background: transparent;
 }
 
 #stock-table th {
-    background: #f8f9fa;
-    font-weight: bold;
+    background: rgba(0, 212, 255, 0.1);
+    color: #00d4ff;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+    font-size: 0.9rem;
+}
+
+#stock-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+    color: #e0e0e0;
+    font-size: 0.9rem;
 }
 
 #stock-table tr:hover {
-    background: #f8f9fa;
+    background: rgba(0, 212, 255, 0.05);
 }
 
 #stock-table input[type="number"] {
     width: 80px;
-    padding: 4px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+    padding: 0.5rem;
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #e0e0e0;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+#stock-table input[type="number"]:focus {
+    border-color: #00d4ff;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 #stock-table select {
-    padding: 4px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+    padding: 0.5rem;
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #e0e0e0;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+#stock-table select:focus {
+    border-color: #00d4ff;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .update-btn, .cancel-btn {
-    padding: 6px 12px;
+    padding: 0.5rem 1rem;
     border: none;
-    border-radius: 3px;
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 12px;
-    margin-right: 5px;
-}
-
-.update-btn {
-    background: #007bff;
-    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
     display: none;
 }
 
+.update-btn {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
 .update-btn:hover {
-    background: #0056b3;
+    background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
 }
 
 .cancel-btn {
-    background: #6c757d;
+    background: linear-gradient(135deg, #6c757d 0%, #545b62 100%);
     color: white;
+    box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
 }
 
 .cancel-btn:hover {
-    background: #545b62;
+    background: linear-gradient(135deg, #545b62 0%, #3d4142 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
 }
 
+/* Footer */
+footer {
+    background: #0f0f23;
+    text-align: center;
+    padding: 2rem;
+    color: #888;
+    border-top: 1px solid rgba(0, 212, 255, 0.1);
+    margin-top: 4rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header nav ul {
+        gap: 1rem;
+    }
+
+    header nav ul li a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    #logout-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    #stock-update {
+        padding: 2rem 1rem;
+    }
+
+    #stock-update h2 {
+        font-size: 1.6rem;
+    }
+
     #stock-form {
         flex-direction: column;
         align-items: stretch;
+        padding: 1.5rem;
+    }
+
+    #stock-form input {
+        min-width: auto;
+        width: 100%;
     }
 
     #stock-table table {
-        font-size: 14px;
+        font-size: 0.8rem;
     }
 
-    #stock-table th, #stock-table td {
-        padding: 8px;
+    #stock-table th,
+    #stock-table td {
+        padding: 0.8rem 0.5rem;
+    }
+
+    #stock-table input[type="number"] {
+        width: 60px;
+        padding: 0.4rem;
+    }
+
+    #stock-table select {
+        padding: 0.4rem;
+        font-size: 0.7rem;
+    }
+
+    .update-btn,
+    .cancel-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
     }
 }

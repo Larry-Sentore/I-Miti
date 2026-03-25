@@ -20,13 +20,13 @@ app.add_middleware(
 
 # Database connection
 def get_db():
-    conn = sqlite3.connect('src/database.sqlite3')
+    conn = sqlite3.connect('database.sqlite3')
     conn.row_factory = sqlite3.Row
     return conn
 
 # Initialize database if not exists
 def init_db():
-    if not os.path.exists('src/database.sqlite3'):
+    if not os.path.exists('database.sqlite3'):
         conn = get_db()
         with open('src/database.sql', 'r') as f:
             sql = f.read()
@@ -212,6 +212,16 @@ class PharmacyRegistration(BaseModel):
     address: str
     number: str
     licenceID: Optional[str] = None
+
+@app.post("/verify_registration_password")
+def verify_registration_password(data: dict):
+    password = data.get('password', '').strip()
+    correct_password = 'I-Miti2024Verify'  # This should be stored securely in production
+
+    if password == correct_password:
+        return {"verified": True, "message": "Password verified successfully"}
+    else:
+        return {"verified": False, "message": "Incorrect password"}
 
 @app.post("/register_pharmacy")
 def register_pharmacy(registration: PharmacyRegistration):
@@ -613,9 +623,13 @@ def search_medicine(medicine: str, latitude: float, longitude: float):
 
 # Serve static files
 # Mount scripts BEFORE the main directory so /scripts/* is available
-app.mount("/scripts", StaticFiles(directory="src/scripts"), name="scripts")
-app.mount("/css", StaticFiles(directory="src/css"), name="css")
+app.mount("/scripts", StaticFiles(directory="scripts"), name="scripts")
+app.mount("/css", StaticFiles(directory="css"), name="css")
 # Serve frontend files (HTML/CSS/JS) from the "hmtl" directory
 # MUST be mounted LAST so API routes are processed first
-app.mount("/", StaticFiles(directory="src/hmtl", html=True), name="static")
+app.mount("/", StaticFiles(directory="hmtl", html=True), name="static")
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 
