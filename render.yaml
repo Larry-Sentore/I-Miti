@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: i-miti
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn src.api:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: REGISTRATION_PASSWORD
+        sync: false          # you will set this manually in the Render dashboard
+      - key: REGISTRATION_TOKEN_SECRET
+        sync: false          # you will set this manually in the Render dashboard
