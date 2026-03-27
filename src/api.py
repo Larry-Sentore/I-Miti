@@ -66,14 +66,14 @@ app.add_middleware(
 
 # Database connection
 def get_db():
-    conn = sqlite3.connect(str(DB_PATH))
+    conn = sqlite3.connect(str(DB_PATH), check_same_thread=False, timeout=30)
     conn.row_factory = sqlite3.Row
     return conn
 
 # Initialize database if not exists
 def init_db():
     if not DB_PATH.exists():
-        conn = get_db()
+        conn = sqlite3.connect(str(DB_PATH), check_same_thread=False, timeout=30)
         with open(SQL_PATH, "r", encoding="utf-8") as f:
             sql = f.read()
         conn.executescript(sql)
