@@ -9,23 +9,24 @@
 
 <body>
     <header>
-        <h1>Search for Medicines</h1>
+        <h1 data-i18n="search_page_h1">Search for Medicines</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#search">Search</a></li>
-                <li><a href="#results">Results</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="#search" data-i18n="nav_search">Search</a></li>
+                <li><a href="#results" data-i18n="nav_results">Results</a></li>
+                <li><button id="lang-toggle" onclick="toggleLanguage()">Kirundi</button></li>
             </ul>
         </nav>
     </header>
 
     <section id="search">
-        <h2>Enter the name of the medicine you are looking for:</h2>
+        <h2 data-i18n="search_section_heading">Enter the name of the medicine you are looking for:</h2>
         <form id="search-form">
-            <input type="text" name="medicine" placeholder="Medicine name" required>
-            <input type="text" name="latitude" placeholder="Latitude" required>
-            <input type="text" name="longitude" placeholder="Longitude" required>
-            <button type="submit">Search</button>
+            <input type="text" name="medicine" data-i18n-ph="search_ph_medicine" placeholder="Medicine name" required>
+            <input type="text" name="latitude" data-i18n-ph="search_ph_latitude" placeholder="Latitude" required>
+            <input type="text" name="longitude" data-i18n-ph="search_ph_longitude" placeholder="Longitude" required>
+            <button type="submit" data-i18n="search_btn">Search</button>
         </form>
     </section>
 
@@ -33,7 +34,10 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 I-Miti. All rights reserved.</p>
+        <p data-i18n="footer_copyright">&copy; 2024 I-Miti. All rights reserved.</p>
     </footer>
 
+    <script src="scripts/translations.js"></script>
     <script src="scripts/search.js"></script>
+</body>
+</html>

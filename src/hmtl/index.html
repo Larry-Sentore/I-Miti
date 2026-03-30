@@ -8,55 +8,67 @@
 </head>
 <body>
     <header>
-        <h1>I-Miti: Medicine Locator App</h1>
+        <h1 data-i18n="index_page_title">I-Miti: Medicine Locator App</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" id="register-link">Pharmacy Register</a></li>
-                <li><a href="phalogin.html">Pharmacy Login</a></li>
+                <li><a href="#home" data-i18n="nav_home">Home</a></li>
+                <li><a href="#features" data-i18n="nav_features">Features</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="#" id="register-link" data-i18n="nav_register">Pharmacy Register</a></li>
+                <li><a href="phalogin.html" data-i18n="nav_login">Pharmacy Login</a></li>
+                <li><button id="lang-toggle" onclick="toggleLanguage()">Kirundi</button></li>
             </ul>
         </nav>
     </header>
 
     <section id="home">
-        <h2>Welcome to I-Miti</h2>
-        <p>Your one-stop solution for finding medicines near you. I-Miti helps you locate pharmacies, check medicine availability, and get directions to the nearest pharmacy.</p>
+        <h2 data-i18n="index_welcome_heading">Welcome to I-Miti</h2>
+        <p data-i18n="index_welcome_body">Your one-stop solution for finding medicines near you. I-Miti helps you locate pharmacies, check medicine availability, and get directions to the nearest pharmacy.</p>
     </section>
 
     <section id="features">
-        <h2>Features</h2>
+        <h2 data-i18n="index_features_heading">Features</h2>
         <ul>
-            <li>Search for medicines by name or category.</li>
-            <li>View real-time availability of medicines at nearby pharmacies.</li>
-            <li>Get directions to the nearest pharmacy.</li>
+            <li data-i18n="index_feature_1">Search for medicines by name or category.</li>
+            <li data-i18n="index_feature_2">View real-time availability of medicines at nearby pharmacies.</li>
+            <li data-i18n="index_feature_3">Get directions to the nearest pharmacy.</li>
         </ul>
     </section>
 
     <section id="search">
-        <h2>Find your medicine now. Click the button below</h2>
-        <a href="search.html" class="btn">Search for Medicines</a>
+        <h2 data-i18n="index_find_heading">Find your medicine now. Click the button below</h2>
+        <a href="search.html" class="btn" data-i18n="index_search_btn">Search for Medicines</a>
     </section>
-
 
     <!-- Password Verification Modal -->
     <div id="password-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Pharmacy Registration Verification</h2>
-            <p>To register your pharmacy, you must first verify your credentials. Please enter the verification password provided to you after emailing us at <a href="mailto:l.sentore@alustudent.com">l.sentore@alustudent.com</a> with your pharmacy license and certificate.</p>
-            <input type="password" id="verification-password" placeholder="Enter verification password">
-            <button id="verify-btn">Verify</button>
-            <p id="error-message" style="color: red; display: none;">Incorrect password. Please contact us for verification.</p>
+            <h2 data-i18n="modal_heading">Pharmacy Registration Verification</h2>
+            <p>
+                <span data-i18n="modal_body">To register your pharmacy, you must first verify your credentials. Please enter the verification password provided to you after emailing us at</span>
+                <a href="mailto:l.sentore@alustudent.com">l.sentore@alustudent.com</a>
+                <span data-i18n="modal_body2">with your pharmacy license and certificate.</span>
+            </p>
+            <input type="password" id="verification-password" data-i18n-ph="modal_ph_password" placeholder="Enter verification password">
+            <button id="verify-btn" data-i18n="modal_verify_btn">Verify</button>
+            <p id="error-message" style="color: red; display: none;" data-i18n="modal_error_msg">Incorrect password. Please contact us for verification.</p>
         </div>
     </div>
 
     <section id="contact">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or feedback, please feel free to reach out to us at <a href="mailto:l.sentore@alustudent.com">l.sentore@alustudent.com</a>.</p>
+        <h2 data-i18n="index_contact_heading">Contact Us</h2>
+        <p>
+            <span data-i18n="index_contact_body">If you have any questions or feedback, please feel free to reach out to us at</span>
+            <a href="mailto:l.sentore@alustudent.com">l.sentore@alustudent.com</a>.
+        </p>
     </section>
 
+    <footer>
+        <p data-i18n="footer_copyright">&copy; 2024 I-Miti. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/translations.js"></script>
     <script src="scripts/script.js" defer></script>
 
 </body>

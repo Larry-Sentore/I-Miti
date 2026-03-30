@@ -1,3 +1,5 @@
+// Registration logic — reads the token from sessionStorage and POSTs to /register_pharmacy.
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('#register form');
   if (!form) return;
@@ -7,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const verificationToken = sessionStorage.getItem('registrationToken');
     if (!verificationToken) {
-      alert('Please verify the registration password first.');
+      alert(t('alert_verify_first'));
       window.location.href = 'index.html';
       return;
     }
@@ -20,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const longitude = document.getElementById('longitude')?.value?.trim();
 
     if (!name || !address || !phone) {
-      alert('Please fill in all required fields.');
+      alert(t('alert_fill_required'));
       return;
     }
 
@@ -32,15 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
       latitude: latitude ? parseFloat(latitude) : null,
       longitude: longitude ? parseFloat(longitude) : null,
       verificationToken,
-
     };
 
     try {
       const res = await fetch('/register_pharmacy', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
 
@@ -51,15 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const data = await res.json();
-      alert('Registration successful!');
-      form.reset();
-      // redirect to a login or search page
-      window.location.href = 'phalogin.html';
-
       console.log('Registered pharmacy:', data);
+      alert(t('alert_register_success'));
+      form.reset();
+      window.location.href = 'phalogin.html';
     } catch (err) {
       console.error(err);
-      alert('Failed to register pharmacy: ' + (err.message || err));
+      alert(t('alert_register_failed') + (err.message || err));
     }
   });
 });

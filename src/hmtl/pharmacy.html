@@ -8,37 +8,41 @@
 </head>
 <body>
     <header>
-        <h1>Pharmacy Stock Update</h1>
+        <h1 data-i18n="pharmacy_page_h1">Pharmacy Stock Update</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="search.html">Search</a></li>
-                <li><button id="logout-btn" type="button">Logout</button></li>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="search.html" data-i18n="nav_search">Search</a></li>
+                <li><button id="logout-btn" type="button" data-i18n="nav_logout">Logout</button></li>
+                <li><button id="lang-toggle" onclick="toggleLanguage()">Kirundi</button></li>
             </ul>
         </nav>
     </header>
 
     <section id="stock-update">
-        <h2>Update Your Pharmacy Stock</h2>
+        <h2 data-i18n="pharmacy_section_heading">Update Your Pharmacy Stock</h2>
         <form id="stock-form" action="/update_stock" method="post">
-            <label for="medicine">Medicine Name:</label>
+            <label for="medicine" data-i18n="pharmacy_label_medicine">Medicine Name:</label>
             <input type="text" id="medicine" name="medicine" required>
 
-            <label for="category">Category:</label>
+            <label for="category" data-i18n="pharmacy_label_category">Category:</label>
             <input type="text" id="category" name="category" required>
 
-            <label for="price">Price(FBU):</label>
+            <label for="price" data-i18n="pharmacy_label_price">Price(FBU):</label>
             <input type="number" id="price" name="price" required>
 
-            <button type="submit">Update Stock</button>
+            <button type="submit" data-i18n="pharmacy_update_stock_btn">Update Stock</button>
         </form>
 
-        <button id="view-stock">View Current Stock</button>
+        <button id="view-stock" data-i18n="pharmacy_view_stock_btn">View Current Stock</button>
         <div id="stock-table"></div>
     </section>
 
     <footer>
-        <p>&copy; 2024 I-Miti. All rights reserved.</p>
+        <p data-i18n="footer_copyright">&copy; 2024 I-Miti. All rights reserved.</p>
     </footer>
+
+    <script src="/scripts/translations.js"></script>
     <script src="/scripts/pharmacy.js" defer></script>
+</body>
 </html>

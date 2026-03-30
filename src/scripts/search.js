@@ -1,4 +1,4 @@
-// This is where the search functionality is implemented. It listens for input in the search bar and filters the displayed items based on the search query.
+// Search functionality — listens for form submission and fetches matching pharmacies.
 
 document.addEventListener('DOMContentLoaded', () => {
     const searchForm = document.querySelector('#search-form');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const longitude = document.querySelector('input[name="longitude"]')?.value?.trim();
 
         if (!medicine || !latitude || !longitude) {
-            alert('Please fill in all fields.');
+            alert(t('alert_fill_all_fields'));
             return;
         }
 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             displayResults(results);
         } catch (err) {
             console.error(err);
-            alert('Error searching for medicine: ' + (err.message || err));
+            alert(t('alert_search_error') + (err.message || err));
         }
     });
 
@@ -32,22 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const resultsContainer = document.getElementById('results');
         resultsContainer.innerHTML = '';
         if (results.length === 0) {
-            resultsContainer.innerHTML = '<p>No pharmacies found with the specified medicine.</p>';
+            resultsContainer.innerHTML = '<p>' + t('result_no_pharmacies') + '</p>';
             return;
         }
-            results.forEach(pharmacy => {
-                const pharmacyDiv = document.createElement('div');
-                pharmacyDiv.classList.add('pharmacy-result');
-                const mapsUrl = `https://www.google.com/maps?q=${pharmacy.latitude},${pharmacy.longitude}`;
-                pharmacyDiv.innerHTML = `
-                    <h3>${pharmacy.name}</h3>
-                    <p>Address: ${pharmacy.address}</p>
-                    <p>Phone: ${pharmacy.number}</p>
-                    <p>Distance: ${pharmacy.distance.toFixed(2)} km</p>
-                    <a href="${mapsUrl}" target="_blank" class="directions-btn">Get Directions</a>
-                `;
-                resultsContainer.appendChild(pharmacyDiv);
-            });
-        }
-    });
-
+        results.forEach(pharmacy => {
+            const pharmacyDiv = document.createElement('div');
+            pharmacyDiv.classList.add('pharmacy-result');
+            const mapsUrl = `https://www.google.com/maps?q=${pharmacy.latitude},${pharmacy.longitude}`;
+            pharmacyDiv.innerHTML = `
+                <h3>${pharmacy.name}</h3>
+                <p>${t('result_label_address')} ${pharmacy.address}</p>
+                <p>${t('result_label_phone')} ${pharmacy.number}</p>
+                <p>${t('result_label_distance')} ${pharmacy.distance.toFixed(2)} ${t('result_label_km')}</p>
+                <a href="${mapsUrl}" target="_blank" class="directions-btn">${t('result_directions_btn')}</a>
+            `;
+            resultsContainer.appendChild(pharmacyDiv);
+        });
+    }
+});

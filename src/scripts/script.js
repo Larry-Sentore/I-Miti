@@ -1,3 +1,4 @@
+// Index page — registration modal logic.
 
         // Modal functionality
         const modal = document.getElementById('password-modal');
@@ -37,9 +38,7 @@
             try {
                 const response = await fetch('/verify_registration_password', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ password: password })
                 });
 
@@ -49,7 +48,6 @@
                     if (result.token) {
                         sessionStorage.setItem('registrationToken', result.token);
                     }
-                    // Redirect to registration page
                     window.location.href = 'pharegister.html';
                 } else {
                     errorMessage.style.display = 'block';
@@ -58,7 +56,7 @@
                 }
             } catch (error) {
                 console.error('Verification error:', error);
-                errorMessage.textContent = 'Verification failed. Please try again.';
+                errorMessage.textContent = t('alert_verify_failed');
                 errorMessage.style.display = 'block';
                 passwordInput.value = '';
                 passwordInput.focus();
@@ -66,8 +64,8 @@
         }
 
         // Allow Enter key to submit
-        passwordInput.onkeypress = function(event) {
+        passwordInput.addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
                 verifyBtn.click();
             }
-        }
+        });
